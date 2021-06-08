@@ -28,6 +28,7 @@ import {
 } from './styles';
 
 import api from '../../services/api';
+import { saveLink } from '../../utils/storeLinks';
 
 export default function Home() {
 
@@ -45,8 +46,9 @@ export default function Home() {
             })
 
             setData(response.data);
-
             setModalVisible(true);
+
+            saveLink('teste', response.data);
 
             Keyboard.dismiss();
             setLoading(false);
